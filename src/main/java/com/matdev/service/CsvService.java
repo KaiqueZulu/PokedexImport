@@ -13,7 +13,7 @@ public class CsvService {
 
         List<String> lines = csvUtils.readLines();
 
-        for (final String line : lines){
+        for (final String line : lines) {
             String[] columns = line.split(",");
             Pokemon pokemon = createPokemonInstance(columns);
             pokemonService.savePokemon(pokemon);
@@ -23,7 +23,7 @@ public class CsvService {
 
     }
 
-    private Pokemon createPokemonInstance(String[] columns){
+    private Pokemon createPokemonInstance(String[] columns) {
         int id = Integer.parseInt(columns[0]);
         String name = columns[1];
         String type = columns[2];
@@ -32,6 +32,6 @@ public class CsvService {
         float weightLbs = Float.parseFloat(columns[5]);
         float weightKgs = Float.parseFloat(columns[6]);
 
-        return new Pokemon(id, name, type, heightFt, heightM, weightLbs, weightKgs );
+        return new Pokemon(id, name, type, heightFt, heightM, weightLbs, weightKgs);
     }
 }

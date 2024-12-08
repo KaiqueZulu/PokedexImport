@@ -12,18 +12,17 @@ public class PokemonDAO {
             .addAnnotatedClass(Pokemon.class)
             .buildSessionFactory();
 
-    public void SavePokemon (Pokemon pokemon){
+    public void SavePokemon(Pokemon pokemon) {
         Session session = sessionFactory.getCurrentSession();
-       try{
-           session.beginTransaction();
-           session.save(pokemon);
-           session.getTransaction().commit();
-       } catch (Exception e) {
-           System.out.println(e.getMessage());
-       }
-       finally {
-           session.close();
-       }
+        try {
+            session.beginTransaction();
+            session.save(pokemon);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            session.close();
+        }
     }
 
     public void removePokemon(int id) {

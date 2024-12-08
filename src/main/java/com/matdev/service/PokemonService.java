@@ -6,11 +6,11 @@ import com.matdev.model.Pokemon;
 public class PokemonService {
     private final PokemonDAO pokemonDAO = new PokemonDAO();
 
-    public void savePokemon(Pokemon pokemon){
+    public void savePokemon(Pokemon pokemon) {
         pokemonDAO.SavePokemon(pokemon);
     }
 
-    public void removePokemon(int id){
+    public void removePokemon(int id) {
         pokemonDAO.removePokemon(id);
     }
 }
